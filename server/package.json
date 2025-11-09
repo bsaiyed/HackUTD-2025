@@ -5,7 +5,7 @@
   "main": "server.js",
   "type": "commonjs",
   "scripts": {
-    "dev": "npm start"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
