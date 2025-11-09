@@ -1,0 +1,180 @@
+.memory-game {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.game-header {
+  margin-bottom: 30px;
+}
+
+.game-header h1 {
+  margin-bottom: 20px;
+  color: #5865F2;
+}
+
+.players {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.player {
+  padding: 15px 20px;
+  border-radius: 8px;
+  background-color: #2f3136;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+  min-width: 150px;
+}
+
+.player.active {
+  border-color: #5865F2;
+  box-shadow: 0 0 10px rgba(88, 101, 242, 0.5);
+}
+
+.player.me {
+  background-color: #5865F2;
+}
+
+.player-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.player-score {
+  color: #b9bbbe;
+  font-size: 0.9em;
+}
+
+.turn-indicator {
+  text-align: center;
+  font-size: 1.2em;
+  margin: 15px 0;
+}
+
+.your-turn {
+  color: #57F287;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.game-over {
+  text-align: center;
+  padding: 20px;
+  background-color: #2f3136;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.winners {
+  margin-top: 15px;
+}
+
+.winner {
+  padding: 10px;
+  font-size: 1.1em;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card {
+  aspect-ratio: 1;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.3s;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card.matched {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.card.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 2.5em;
+}
+
+.card-front {
+  background: linear-gradient(135deg, #5865F2, #7289da);
+  color: white;
+}
+
+.card-back {
+  background: white;
+  transform: rotateY(180deg);
+  color: #2f3136;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2em;
+}
+
+.error {
+  color: #ed4245;
+}
+
+.waiting-for-players {
+  text-align: center;
+  padding: 40px;
+}
+
+.current-players {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.player-badge {
+  padding: 10px 20px;
+  background-color: #5865F2;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .players {
+    flex-direction: column;
+  }
+}
