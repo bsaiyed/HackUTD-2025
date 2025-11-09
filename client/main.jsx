@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { DiscordSDK } from "@discord/embedded-app-sdk";
 import './style.css';
 import CardMatchingGame from './CardMatchingGame';
+import { io } from 'socket.io-client';
+const socket=io('https://hack-utd-2025-2a9qkzsgb-bsaiyeds-projects.vercel.app/');
+
 
 // Instantiate the SDK
 const discordSdk = new DiscordSDK(import.meta.env.VITE_DISCORD_CLIENT_ID);
