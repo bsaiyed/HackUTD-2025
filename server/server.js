@@ -41,7 +41,7 @@ app.use(express.static("public"));
 
 // Basic route
 app.get("/", (req, res) => {
-  res.send("Socket.IO server is running!");
+  res.send("Socket.IO server is running0!!");
 });
 
 // Socket.IO connection
