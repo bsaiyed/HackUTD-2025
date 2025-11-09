@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { DiscordSDK } from "@discord/embedded-app-sdk";
 import './style.css';
-import rocketLogo from '/rocket.png';
+import CardMatchingGame from './CardMatchingGame';
 
 // Instantiate the SDK
 const discordSdk = new DiscordSDK(import.meta.env.VITE_DISCORD_CLIENT_ID);
@@ -17,10 +17,17 @@ function App() {
     });
   }, []);
 
+  if (!isReady) {
+    return (
+      <div style={{ textAlign: 'center', padding: '2rem' }}>
+        <h2>Loading...</h2>
+      </div>
+    );
+  }
+
   return (
     <div>
-      <img src={rocketLogo} className="logo" alt="Discord" />
-      <h1>Hello, World!</h1>
+      <CardMatchingGame />
     </div>
   );
 }
